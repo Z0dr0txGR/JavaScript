@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Получение данных с формы</title>
+</head>
+<script>
+    // Функция, вызываемая после нажатия кнопки
+    function calc() {
+        // Получение значения из элмемента с id 'x'
+        let x = document.getElementById('x').value
+        let y = document.getElementById('y').value
+        let result = '';
+        if (x > 0 && y > 0) {
+            result = 'I';
+        }
+        if (x < 0 && y > 0) {
+            result = 'II';
+        }
+        if (x > 0 && y < 0) {
+            result = 'IV';
+        }
+        if (x < 0 && y < 0) {
+            result = 'III';
+        }
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+<body>
+<!-- Форма содержит интерактивные элементы: Поля ввода, Кнопки, Чекбоксы и прочее -->
+<form>
+    <!-- input - элемент для ввода информации
+            text - текстовое поле ввода
+            id   - уникальный идентификатор элемента
+            placeholder - подсказка в элементе
+    -->
+    <input type="text" id="x" placeholder="X">
+    <input type="text" id="y" placeholder="Y">
+    <input type="button" value="Посчитать" onclick="calc()">
+    <div id="result"></div>
+</form>
+</body>
+</html>
