@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Контрольная</title>
+</head>
+<script>
+    function findClosestElement(arr, x) {
+        let minDiff = 1000000;
+        let closestElement = null;
+
+        for (let i = 0; i < arr.length; i++) {
+            const diff = Math.abs(arr[i] - x);
+            if (diff < minDiff) {
+                minDiff = diff;
+                closestElement = arr[i];
+            }
+        }
+
+        return closestElement;
+    }
+
+    const array = [1, 3, 5, 7, 9];
+    const x = 6;
+    const closestElement = findClosestElement(array, x);
+
+    console.log(`Для числа ${x} ближайший элемент в массиве [${array}] равен ${closestElement}`);
+</script>
+<body>
+
+</body>
+</html>

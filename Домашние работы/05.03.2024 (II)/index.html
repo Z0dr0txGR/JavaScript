@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Контрольная</title>
+</head>
+<script>
+    function numerologicalNumber(N) {
+        let sum = 0;
+        while (N > 0 || sum > 9) {
+            if (N === 0) {
+                N = sum;
+                sum = 0;
+            }
+            sum += N % 10;
+            N = Math.floor(N / 10);
+        }
+        return sum;
+    }
+
+    const N = 12345;
+    const result = numerologicalNumber(N);
+
+    console.log(`Нумерологическое число для числа ${N} равно ${result}`);
+</script>
+<body>
+
+</body>
+</html>
